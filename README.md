@@ -1,5 +1,5 @@
 # Online-Borrowing-Book-System
-Deliver ML Model to Mobile Development\n
+Deliver ML Model to Mobile Development
 Service Architecture
 
 Steps to Develop the API
@@ -21,14 +21,11 @@ Set the request method to POST.
 
 3.Send a Request
 Use Postman to send a request with raw JSON in the request body, structured as follows:
-
 {
     "name": "petualangan si revi"
 }
-
 4.etrieve and Review the Response
 Check the response returned by the API.
-
 
 Tools We Use
 Visual Studio Code: For developing the code logic.
