@@ -103,7 +103,7 @@ def upload():
             return jsonify({'error': f'Invalid genre. Valid genres are: {", ".join(valid_genres)}'}), 400
 
         book_info = {
-            'name': request.form['name'],
+            'title': request.form['title'],
             'id': str(uuid.uuid4()),
             'author': request.form['author'],
             'rating': float(request.form['rating']),
@@ -117,7 +117,7 @@ def upload():
         global df
         new_row = {
             'user': book_info['user'],
-            'name': book_info['name'],
+            'title': book_info['title'],
             'review/score': book_info['rating'],
             'Genre': book_info['genre']  
         }
@@ -147,7 +147,7 @@ def get_buku():
 @app.route('/rekomendasi', methods=['GET'])
 def rekomendasi():
     try:
-        book_title = request.args.get('book_title')
+        book_title = request.args.get('title')
         if not book_title:
             return jsonify({'error': 'Parameter "book_title" is required'}), 400
 
@@ -183,14 +183,14 @@ def rekomendasi():
 def rating():
     try:
         data = request.json
-        book_name = data.get('name', None)
+        book_name = data.get('title', None)
         if not book_name:
             return jsonify({'error': 'Missing key: name'}), 400
 
-        if 'name' not in df.columns or 'review/score' not in df.columns:
+        if 'title' not in df.columns or 'review/score' not in df.columns:
             return jsonify({'error': 'Required columns not found in dataset'}), 500
 
-        review_scores = df[df['name'] == book_name]['review/score']
+        review_scores = df[df['title'] == book_name]['review/score']
         if review_scores.empty:
             return jsonify({'error': 'No reviews found for this book'}), 404
 
