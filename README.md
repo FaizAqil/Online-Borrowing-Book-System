@@ -2,6 +2,8 @@
 
 ## Deliver ML Model to Mobile Development Service Architecture
 
+![Uploading Presentasi Product Capstone.png…]()
+
 ### Steps to Develop the API
 1. **Set Up Dependencies**
    - Install necessary libraries, including Flask.
