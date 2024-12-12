@@ -2,7 +2,8 @@
 
 ## Deliver ML Model to Mobile Development Service Architecture
 
-![Uploading Presentasi Product Capstone.png]()
+![Presentasi Product Capstone](https://github.com/user-attachments/assets/62e3a3c6-162e-403e-b94b-21c0bc2ab5d0)
+
 
 ### Steps to Develop the API
 1. **Set Up Dependencies**
